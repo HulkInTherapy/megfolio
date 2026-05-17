@@ -1,0 +1,526 @@
+/* ========================================
+   THE LIVING DIARY - Simplified CSS
+   A raw, personal notebook feel
+   ======================================== */
+
+:root {
+  /* Paper - The canvas */
+  --paper: #FDFBF7;
+  --paper-aged: #F5EBE0;
+  --paper-cream: #FBF8F1;
+
+  /* Ink - Japanese-inspired palette */
+  --ink: #2F3640;              /* Sumi Ink - Main headings */
+  --ink-body: #3E3E3E;         /* Warm Charcoal - Body text */
+  --ink-light: #718093;        /* Faded Graphite - Company names */
+  --ink-faded: #8B8B8B;
+
+  /* Pencil - Margin notes (Bamboo green) */
+  --pencil: #7A9E7E;
+
+  /* Dates - Persimmon */
+  --date: #CD6853;
+
+  /* Links - Twilight Indigo */
+  --link: #8B7EB8;
+  --link-hover: #6B5B9A;
+
+  /* Accent - Koi Orange */
+  --accent: #CD6853;
+  --accent-warm: #E8A87C;
+  --highlight: #FFF3C4;
+
+  /* Emotions palette */
+  --spark: #CD6853;
+  --calm: #7A9E7E;
+  --wonder: #8B7EB8;
+  --warmth: #E8A87C;
+  --energy: #E8B86D;
+
+  /* Layout */
+  --content-max: 800px;
+  --container-padding: 24px;
+
+  /* Legacy compatibility */
+  --bg: var(--paper);
+  --text: var(--ink);
+  --text-muted: var(--ink-light);
+  --border: #e5e5e3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink-body);
+  line-height: 1.7;
+  font-weight: 400;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Paper texture background */
+.App {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--paper);
+}
+
+.texture-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.App > *:not(.texture-overlay) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Centered container - like a notebook page */
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Section spacing - use section.container for higher specificity */
+section.container {
+  padding: 40px 0;
+  margin: 0 auto 60px auto;
+}
+
+section.container:first-of-type {
+  padding-top: 70px;
+}
+
+section.container:last-of-type {
+  margin-bottom: 40px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-syne), 'Syne', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--spark);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Handwritten typography - the diary feel */
+.handwritten {
+  font-family: var(--font-caveat), 'Caveat', cursive;
+  font-weight: 500;
+}
+
+.handwritten-lg {
+  font-family: var(--font-caveat), 'Caveat', cursive;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.handwritten-sm {
+  font-family: var(--font-caveat), 'Caveat', cursive;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* Section titles */
+.section-title {
+  font-family: var(--font-caveat), 'Caveat', cursive;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+/* Dates - Persimmon color */
+.text-date {
+  color: var(--date);
+}
+
+/* Margin notes - pencil scribbles in the margins */
+.margin-note {
+  font-family: var(--font-caveat), 'Caveat', cursive;
+  font-size: 1.25rem;
+  color: var(--pencil);
+  font-style: italic;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+/* Crossed out text - changing your mind */
+.crossed-out {
+  position: relative;
+  color: var(--pencil);
+}
+
+.crossed-out::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  right: -2px;
+  height: 2px;
+  background: var(--ink-light);
+  transform: rotate(-2deg);
+}
+
+/* Highlighted text - like a highlighter */
+.highlighted {
+  background: linear-gradient(
+    to bottom,
+    transparent 45%,
+    var(--highlight) 45%,
+    var(--highlight) 95%,
+    transparent 95%
+  );
+  padding: 0 4px;
+}
+
+/* Text colors */
+.text-spark { color: var(--spark); }
+.text-calm { color: var(--calm); }
+.text-wonder { color: var(--wonder); }
+.text-warmth { color: var(--warmth); }
+.text-pencil { color: var(--pencil); }
+.text-ink-light { color: var(--ink-light); }
+
+/* Subtle rotations for imperfect feel */
+.tilt-left { transform: rotate(-2deg); }
+.tilt-right { transform: rotate(2deg); }
+.tilt-left-subtle { transform: rotate(-1deg); }
+.tilt-right-subtle { transform: rotate(1deg); }
+
+/* Selection color */
+::selection {
+  background-color: var(--highlight);
+  color: var(--ink);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pencil);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-light);
+}
+
+/* Simple reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Two-column grid for projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Experience timeline */
+.experience-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: 90px;
+  top: 8px;
+  bottom: -24px;
+  width: 2px;
+  background: var(--pencil);
+  opacity: 0.3;
+}
+
+.experience-item:last-child::before {
+  display: none;
+}
+
+/* Blog list */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Contact links */
+.contact-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-caveat), 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--link);
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--link-hover);
+}
+
+/* Tech tags */
+.tech-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  background: var(--paper-aged);
+  border: 1px dashed var(--ink-light);
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink-body);
+  margin: 4px;
+}
+
+/* Paper lift hover effect */
+.paper-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paper-lift:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Interactive elements - clickable cards */
+[role="button"] {
+  cursor: pointer;
+}
+
+[role="button"]:focus-visible {
+  outline: 2px solid var(--spark);
+  outline-offset: 2px;
+}
+
+/* Footer */
+.footer {
+  padding: 60px 0 40px;
+  border-top: 2px dashed var(--pencil);
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 24px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  /* Ensure container has side padding on mobile */
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  section.container {
+    padding: 40px 24px;
+    margin: 0 auto 50px auto;
+  }
+
+  section.container:first-of-type {
+    padding-top: 50px;
+  }
+
+  /* Hero layout - name above doodle on mobile */
+  .hero-columns {
+    flex-direction: column-reverse;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .hero-columns > div {
+    text-align: center;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .hero-columns > div:first-child {
+    width: auto;
+  }
+
+  .handwritten-lg {
+    font-size: 2rem;
+  }
+
+  /* Experience section mobile */
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-left: 0;
+  }
+
+  .experience-item::before {
+    display: none;
+  }
+
+  /* Project grid - single column on mobile */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Blog list mobile */
+  .blog-list {
+    gap: 16px;
+  }
+
+  .blog-list > div {
+    padding: 16px;
+  }
+
+  /* Contact section mobile */
+  .contact-links {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  /* Footer mobile */
+  .footer {
+    padding: 40px 24px 30px;
+    margin-top: 40px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-signature {
+    min-width: auto;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* SketchyBox mobile padding */
+  .sketchy-box {
+    padding: 16px;
+  }
+
+  /* Tech tags smaller on mobile */
+  .tech-tag {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    margin: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   SKETCHY COMPONENTS SUPPORT
+   Styles for rough.js elements
+   ======================================== */
+
+.sketchy-box {
+  position: relative;
+}
+
+.sketchy-divider {
+  margin: 16px 0;
+}
+
+/* Keep existing sketchy styles that are still in use */
+.sketchy-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.sketchy-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 Q 10 2, 25 4 T 50 4 T 75 4 T 100 4' stroke='%23E8A87C' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+  background-size: 100px 8px;
+}
