@@ -16,8 +16,13 @@ const ClientShell = ({ children }) => {
 
   useEffect(() => {
     preloadRough();
-    const id = requestIdleCallback(() => setOverlaysReady(true), { timeout: 1500 });
-    return () => cancelIdleCallback(id);
+    if (typeof requestIdleCallback === 'function') {
+      const id = requestIdleCallback(() => setOverlaysReady(true), { timeout: 1500 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(() => setOverlaysReady(true), 100);
+      return () => clearTimeout(id);
+    }
   }, []);
 
   return (
