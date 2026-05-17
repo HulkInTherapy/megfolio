@@ -4,7 +4,7 @@ export const personalInfo = {
   name: "Meghavi Rao",
   role: "Applied AI Engineer",
   tagline: "Building intelligent systems that actually make sense.",
-  email: "hello@meghavi.dev",
+  email: "hello@meghavi.me",
   location: "San Francisco, CA",
   bio: `I'm an Applied AI Engineer who believes in building things that work, not just things that demo well. Currently exploring the intersection of large language models and real-world applications.
 

@@ -203,7 +203,7 @@ const BlogDetail = ({ post, relatedPosts }) => {
               </p>
             </div>
             <p className="margin-note" style={{ marginTop: '8px' }}>
-              → found this useful? let me know at hello@meghavi.dev
+              → found this useful? let me know at hello@meghavi.me
             </p>
           </div>
 
