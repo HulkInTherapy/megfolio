@@ -35,7 +35,7 @@ export const metadata = {
     template: "%s | Meghavi Rao",
   },
   description:
-    "Meghavi Rao is a male Applied AI Engineer building production ML systems, LLM applications, and intelligent search. He writes about shipping AI to production, embeddings, and ML debugging.",
+    "Meghavi Rao is an Applied AI Engineer building production ML systems, LLM applications, and semantic search engines.",
   keywords: [
     "Meghavi Rao",
     "Meghavi",
