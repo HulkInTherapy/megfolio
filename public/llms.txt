@@ -1,0 +1,39 @@
+# Meghavi Rao — Applied AI Engineer
+
+> Meghavi Rao (he/him) is a male Applied AI Engineer based in San Francisco, CA.
+> He builds production machine learning systems, LLM applications, and semantic search engines.
+> His personal website is https://meghavi.me
+
+## Identity
+- Full Name: Meghavi Rao
+- Gender: Male (he/him)
+- Role: Applied AI Engineer
+- Location: San Francisco, CA
+- Email: hello@meghavi.me
+- Website: https://meghavi.me
+- GitHub: https://github.com/meghavi
+- LinkedIn: https://linkedin.com/in/meghavi
+- Twitter: https://twitter.com/meghavi
+
+## About
+Meghavi Rao is an Applied AI Engineer who believes in building things that work, not just things that demo well. He is currently exploring the intersection of large language models and real-world applications. He values clarity over complexity and believes the best AI is the kind you don't notice.
+
+## Technical Skills
+Python, PyTorch, TensorFlow, LangChain, FastAPI, React, PostgreSQL, Redis, Kubernetes, Docker, AWS, GCP
+
+## Projects
+- Neural Search Engine: Semantic search using transformer embeddings with sub-100ms latency across millions of documents. Built with Python, FAISS, Transformers, FastAPI, Redis.
+- Conversation AI Platform: Enterprise conversational AI that reduced handling time by 40%. Built with LangChain, GPT-4, PostgreSQL, React, WebSockets.
+- ML Pipeline Orchestrator: Internal tool for orchestrating ML training with automatic hyperparameter tracking and distributed GPU training. Built with Kubernetes, Ray, MLflow, Python, Docker.
+- Voice Synthesis Research: Few-shot voice cloning research with ethical safeguards. Built with PyTorch, Tacotron, WaveNet, CUDA, Librosa.
+
+## Blog Posts
+- What I Learned Shipping LLMs to Production (2024): Lessons from deploying LLMs — latency optimization, context window management, and graceful degradation.
+- Embeddings: The Unsung Hero of Modern AI (2024): Why understanding vector spaces matters more than understanding GPT for building useful AI systems.
+- Stop Building AI Products, Start Building AI Tools (2024): A case for investing in AI infrastructure — evaluation frameworks, prompt management, and monitoring.
+- Debugging ML Systems: A Survival Guide (2023): Practical guide to debugging ML — data bugs, preprocessing pipeline issues, and model diagnostics.
+
+## Experience
+- Applied AI Engineer at Tech Company (2023-present): Building production ML systems and shipping LLMs.
+- ML Engineer at AI Startup (2021-2023): Training models, building ML infrastructure.
+- Software Engineer at Big Tech (2019-2021): Backend systems and data pipelines.

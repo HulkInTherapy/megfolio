@@ -26,14 +26,57 @@ const inter = Inter({
   weight: ["300", "400", "500"],
 });
 
+const SITE_URL = "https://meghavi.me";
+
 export const metadata = {
-  title: "Meghavi Rao | Applied AI Engineer",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Meghavi Rao | Applied AI Engineer — Portfolio & Blog",
+    template: "%s | Meghavi Rao",
+  },
   description:
-    "Meghavi Rao - Applied AI Engineer. A creative portfolio showcasing AI/ML projects, thoughts, and experiments.",
+    "Meghavi Rao is a male Applied AI Engineer building production ML systems, LLM applications, and intelligent search. He writes about shipping AI to production, embeddings, and ML debugging.",
+  keywords: [
+    "Meghavi Rao",
+    "Meghavi",
+    "Applied AI Engineer",
+    "Machine Learning Engineer",
+    "LLM",
+    "AI portfolio",
+    "ML engineer portfolio",
+    "meghavi.me",
+  ],
+  authors: [{ name: "Meghavi Rao", url: SITE_URL }],
+  creator: "Meghavi Rao",
+  publisher: "Meghavi Rao",
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "Meghavi Rao",
+    title: "Meghavi Rao | Applied AI Engineer",
+    description:
+      "Meghavi Rao is an Applied AI Engineer building production ML systems, LLM apps, and semantic search. Explore his projects and blog.",
+  },
+  twitter: {
+    card: "summary",
+    site: "@meghavi",
+    creator: "@meghavi",
+    title: "Meghavi Rao | Applied AI Engineer",
+    description:
+      "Meghavi Rao — Applied AI Engineer. Projects, blog posts, and experiments in AI/ML.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
+  },
+  verification: {},
 };
 
 export const viewport = {
-  themeColor: "#000000",
+  themeColor: "#FDFBF7",
 };
 
 export default function RootLayout({ children }) {

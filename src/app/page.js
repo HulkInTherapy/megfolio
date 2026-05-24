@@ -1,5 +1,46 @@
 import { personalInfo, projects, blogPosts, experiences } from "@/data/mock";
+import Script from "next/script";
 import Layout from "@/components/Layout";
+
+const SITE_URL = "https://meghavi.me";
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Meghavi Rao",
+  gender: "Male",
+  jobTitle: "Applied AI Engineer",
+  description:
+    "Meghavi Rao is a male Applied AI Engineer who builds production ML systems, LLM applications, and semantic search engines. He specializes in Python, PyTorch, LangChain, and deploying large language models at scale.",
+  url: SITE_URL,
+  email: "hello@meghavi.me",
+  sameAs: [
+    "https://github.com/meghavi",
+    "https://linkedin.com/in/meghavi",
+    "https://twitter.com/meghavi",
+  ],
+  knowsAbout: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Large Language Models",
+    "Natural Language Processing",
+    "Semantic Search",
+    "Python",
+    "PyTorch",
+    "LangChain",
+    "MLOps",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Meghavi Rao — Applied AI Engineer",
+  url: SITE_URL,
+  description:
+    "Personal portfolio and blog of Meghavi Rao, a male Applied AI Engineer sharing his work on LLMs, ML systems, and AI tools.",
+  author: { "@type": "Person", name: "Meghavi Rao" },
+};
 import { SketchyBox, SketchyDivider } from "@/components/sketchy";
 import { SectionDoodles, CoffeeCupIcon } from "@/components/doodles";
 import { ArrowUpRight, Mail, Github, Linkedin, Twitter } from "lucide-react";
@@ -8,6 +49,14 @@ import Link from "next/link";
 export default function HomePage() {
   return (
       <Layout>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {/* Hero */}
         <section id="hero" className="container" style={{ position: "relative" }}>
           <SectionDoodles section="hero" />

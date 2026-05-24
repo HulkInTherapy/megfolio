@@ -31,3 +31,7 @@ yarn-error.log*
 
 # other
 .gstack/
+HANDOFF.md
+theidea.md
+*.json.tmp
+localhost_*.json
