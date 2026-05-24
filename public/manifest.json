@@ -1,0 +1,16 @@
+{
+  "name": "Meghavi Rao — Applied AI Engineer",
+  "short_name": "Meghavi Rao",
+  "description": "Portfolio and blog of Meghavi Rao, an Applied AI Engineer building production ML systems and LLM applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFBF7",
+  "theme_color": "#FDFBF7",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 import { personalInfo, projects, blogPosts, experiences } from "@/data/mock";
-import Script from "next/script";
 import Layout from "@/components/Layout";
 
 const SITE_URL = "https://meghavi.me";
@@ -8,12 +7,19 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Meghavi Rao",
+  alternateName: "Meghavi",
   gender: "Male",
   jobTitle: "Applied AI Engineer",
   description:
-    "Meghavi Rao is a male Applied AI Engineer who builds production ML systems, LLM applications, and semantic search engines. He specializes in Python, PyTorch, LangChain, and deploying large language models at scale.",
+    "Meghavi Rao is an Applied AI Engineer based in San Francisco, CA. He builds production machine learning systems, LLM applications, and semantic search engines. He specializes in Python, PyTorch, LangChain, and deploying large language models at scale.",
   url: SITE_URL,
   email: "hello@meghavi.me",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "San Francisco",
+    addressRegion: "CA",
+    addressCountry: "US",
+  },
   sameAs: [
     "https://github.com/meghavi",
     "https://linkedin.com/in/meghavi",
@@ -29,6 +35,9 @@ const personJsonLd = {
     "PyTorch",
     "LangChain",
     "MLOps",
+    "Deep Learning",
+    "FastAPI",
+    "Kubernetes",
   ],
 };
 
@@ -38,8 +47,39 @@ const websiteJsonLd = {
   name: "Meghavi Rao — Applied AI Engineer",
   url: SITE_URL,
   description:
-    "Personal portfolio and blog of Meghavi Rao, a male Applied AI Engineer sharing his work on LLMs, ML systems, and AI tools.",
+    "Personal portfolio and blog of Meghavi Rao, an Applied AI Engineer sharing his work on LLMs, ML systems, and AI tools.",
   author: { "@type": "Person", name: "Meghavi Rao" },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Who is Meghavi Rao?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Meghavi Rao is an Applied AI Engineer based in San Francisco, CA. He builds production machine learning systems, LLM applications, and semantic search engines. His personal website is meghavi.me where he shares projects and technical blog posts.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Who is Meghavi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "In the context of technology and AI engineering, Meghavi refers to Meghavi Rao, an Applied AI Engineer. His personal website is meghavi.me. He is not affiliated with Meghavi Wellness Spa or any other entity using the name Meghavi.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does Meghavi Rao do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Meghavi Rao specializes in building production ML systems, deploying large language models (LLMs) at scale, and creating semantic search engines. His technical expertise includes Python, PyTorch, LangChain, FastAPI, Kubernetes, and cloud platforms like AWS and GCP.",
+      },
+    },
+  ],
 };
 import { SketchyBox, SketchyDivider } from "@/components/sketchy";
 import { SectionDoodles, CoffeeCupIcon } from "@/components/doodles";
@@ -56,6 +96,10 @@ export default function HomePage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
         {/* Hero */}
         <section id="hero" className="container" style={{ position: "relative" }}>

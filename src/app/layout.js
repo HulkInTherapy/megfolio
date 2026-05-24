@@ -72,6 +72,7 @@ export const metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
   },
+  manifest: "/manifest.json",
   verification: {},
 };
 

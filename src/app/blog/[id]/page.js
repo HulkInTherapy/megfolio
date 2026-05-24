@@ -27,6 +27,45 @@ export async function generateMetadata({ params }) {
   };
 }
 
+function BlogPostJsonLd({ post }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    url: `${SITE_URL}/blog/${post.id}`,
+    author: {
+      "@type": "Person",
+      name: "Meghavi Rao",
+      alternateName: "Meghavi",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Meghavi Rao",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${post.id}`,
+    },
+    inLanguage: "en-US",
+    keywords: post.title
+      .split(/[\s:—]+/)
+      .filter((w) => w.length > 3)
+      .join(", "),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default async function BlogPage({ params }) {
   const { id } = await params;
   const post = blogPosts.find((p) => p.id === id);
@@ -36,5 +75,10 @@ export default async function BlogPage({ params }) {
     ? blogPosts.filter((p) => post.related.includes(p.id))
     : blogPosts.filter((p) => p.id !== post.id).slice(0, 2);
 
-  return <BlogDetail post={post} relatedPosts={relatedPosts} />;
+  return (
+    <>
+      <BlogPostJsonLd post={post} />
+      <BlogDetail post={post} relatedPosts={relatedPosts} />
+    </>
+  );
 }

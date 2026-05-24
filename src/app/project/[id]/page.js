@@ -25,6 +25,33 @@ export async function generateMetadata({ params }) {
   };
 }
 
+function ProjectJsonLd({ project }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: project.title,
+    description: project.shortDesc,
+    url: `${SITE_URL}/project/${project.id}`,
+    codeRepository: project.link,
+    author: {
+      "@type": "Person",
+      name: "Meghavi Rao",
+      alternateName: "Meghavi",
+      url: SITE_URL,
+    },
+    programmingLanguage: project.tech,
+    dateCreated: `${project.year}-01-01`,
+    keywords: project.tech.join(", "),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default async function ProjectPage({ params }) {
   const { id } = await params;
   const project = projects.find((p) => p.id === id);
@@ -34,10 +61,13 @@ export default async function ProjectPage({ params }) {
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <ProjectDetail
-      project={project}
-      nextProject={nextProject}
-      currentIndex={currentIndex}
-    />
+    <>
+      <ProjectJsonLd project={project} />
+      <ProjectDetail
+        project={project}
+        nextProject={nextProject}
+        currentIndex={currentIndex}
+      />
+    </>
   );
 }
