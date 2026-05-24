@@ -19,9 +19,9 @@
 - Location: San Francisco, CA
 - Email: hello@meghavi.me
 - Website: https://meghavi.me
-- GitHub: https://github.com/meghavi
-- LinkedIn: https://linkedin.com/in/meghavi
-- Twitter/X: https://twitter.com/meghavi
+- GitHub: https://github.com/HulkInTherapy
+- LinkedIn: https://www.linkedin.com/in/meghavirao/
+- Twitter/X: https://x.com/themegh
 
 ## About
 Meghavi Rao is an Applied AI Engineer who believes in building things that work, not just things that demo well. He is currently exploring the intersection of large language models and real-world applications. He values clarity over complexity and believes the best AI is the kind you don't notice.

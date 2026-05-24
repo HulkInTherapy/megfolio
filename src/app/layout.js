@@ -61,8 +61,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
-    site: "@meghavi",
-    creator: "@meghavi",
+    site: "@themegh",
+    creator: "@themegh",
     title: "Meghavi Rao | Applied AI Engineer",
     description:
       "Meghavi Rao — Applied AI Engineer. Projects, blog posts, and experiments in AI/ML.",

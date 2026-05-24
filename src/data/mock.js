@@ -12,9 +12,9 @@ When I'm not training models or debugging pipelines, you'll find me brewing coff
 
 I value clarity over complexity, and I think the best AI is the kind you don't notice.`,
   socialLinks: {
-    github: "https://github.com/meghavi",
-    linkedin: "https://linkedin.com/in/meghavi",
-    twitter: "https://twitter.com/meghavi"
+    github: "https://github.com/HulkInTherapy",
+    linkedin: "https://www.linkedin.com/in/meghavirao/",
+    twitter: "https://x.com/themegh"
   }
 };
 
@@ -30,7 +30,7 @@ The system handles millions of documents with sub-100ms latency. We implemented 
 Key insight: Sometimes the best results aren't the most similar—they're the most useful.`,
     tech: ["Python", "FAISS", "Transformers", "FastAPI", "Redis"],
     year: "2024",
-    link: "https://github.com/meghavi/neural-search",
+    link: "https://github.com/HulkInTherapy/neural-search",
     image: null,
     // Living Sketchbook fields
     marginNote: "started as a 'quick weekend project'... 3 months later here we are",
@@ -48,7 +48,7 @@ Implemented context-aware responses, emotion detection, and smart handoff to hum
 The hardest part wasn't the AI—it was understanding what customers actually needed.`,
     tech: ["LangChain", "GPT-4", "PostgreSQL", "React", "WebSockets"],
     year: "2024",
-    link: "https://github.com/meghavi/convo-ai",
+    link: "https://github.com/HulkInTherapy/convo-ai",
     image: null,
     // Living Sketchbook fields
     marginNote: "the 40% improvement came from ONE simple change... context windows",
@@ -66,7 +66,7 @@ Features include automatic hyperparameter tracking, distributed training across 
 This project taught me that good tooling is worth 10x the investment in fancy models.`,
     tech: ["Kubernetes", "Ray", "MLflow", "Python", "Docker"],
     year: "2023",
-    link: "https://github.com/meghavi/ml-pipe",
+    link: "https://github.com/HulkInTherapy/ml-pipe",
     image: null,
     // Living Sketchbook fields
     marginNote: "wrote this after losing a week of experiments to a crashed notebook",
@@ -84,7 +84,7 @@ Experimented with various architectures including Tacotron variants and diffusio
 Ethical considerations were a major part of this work—we built in safeguards against misuse.`,
     tech: ["PyTorch", "Tacotron", "WaveNet", "CUDA", "Librosa"],
     year: "2023",
-    link: "https://github.com/meghavi/voice-synth",
+    link: "https://github.com/HulkInTherapy/voice-synth",
     image: null,
     // Living Sketchbook fields
     marginNote: "spent way too long making it say 'hello world' naturally",

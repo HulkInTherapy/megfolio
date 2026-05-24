@@ -39,9 +39,9 @@ const personJsonLd = {
     addressCountry: "US",
   },
   sameAs: [
-    "https://github.com/meghavi",
-    "https://linkedin.com/in/meghavi",
-    "https://twitter.com/meghavi",
+    "https://github.com/HulkInTherapy",
+    "https://www.linkedin.com/in/meghavirao/",
+    "https://x.com/themegh",
   ],
   knowsAbout: [
     "Artificial Intelligence",
