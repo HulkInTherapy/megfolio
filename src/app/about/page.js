@@ -10,7 +10,7 @@ const SITE_URL = "https://meghavi.me";
 export const metadata = {
   title: "About Meghavi Rao — Applied AI Engineer",
   description:
-    "Meghavi Rao is an Applied AI Engineer based in San Francisco, CA. He builds production ML systems, LLM applications, and semantic search engines. Learn about his background, skills, and work.",
+    "Meghavi Rao is an Applied AI Engineer based in San Francisco. He builds production ML systems, LLM apps, and semantic search engines.",
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: "About Meghavi Rao | Applied AI Engineer",
